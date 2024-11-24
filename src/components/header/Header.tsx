@@ -78,7 +78,7 @@ export const Header = () => {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-sm/7 text-gray-400 hover:bg-purple-150">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-sm/7 text-gray-400 hover:bg-purple-150 hover:text-white">
                     Home
                   </DisclosureButton>
                 </Disclosure>
