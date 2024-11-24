@@ -1,10 +1,11 @@
-import ImageBanner from "../../assets/images/image-bg-banner.png";
+import ImageBanner from "../../assets/images/image-bg-banner.webp";
 
 export const Banner = () => {
   return (
     <div className="overflow-hidden py-24 sm:py-8 h-[120vh] flex justify-center">
       <img
         src={ImageBanner}
+        loading="eager"
         className="absolute inset-0 -z-10 size-full object-cover object-bottom"
       />
       <div className="w-[36rem] lg:px-8">
