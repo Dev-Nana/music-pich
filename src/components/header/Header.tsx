@@ -14,9 +14,9 @@ export const Header = () => {
 
   return (
     <header>
-      <nav className="mx-auto flex items-center justify-between py-4 px-8">
-        <div className="flex lg:flex-1">
-          <img className="" src={Logo} />
+      <nav className="mx-auto flex items-center justify-between py-4 px-8 md:px-12 bg-transparent">
+        <div className="flex">
+          <img className="pr-[5vw]" src={Logo} />
         </div>
         <div className="flex lg:hidden">
           <button
@@ -28,32 +28,30 @@ export const Header = () => {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex gap-x-8">
-          <a href="#" className="text-sm text-white">
+          <a href="#" className="text-white">
             Home
           </a>
-          <a href="#" className="text-sm text-white">
+          <a href="#" className="text-white">
             Categoria
           </a>
-          <a href="#" className="text-sm text-white">
+          <a href="#" className="text-white">
             Preços
           </a>
-          <a href="#" className="text-sm text-white">
+          <a href="#" className="text-white">
             Contate-nos
           </a>
-          <a href="#" className="text-sm text-white">
+          <a href="#" className="text-white">
             FAQ
           </a>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-3">
+        <div className="items-center hidden lg:flex lg:justify-end gap-3">
           <a
-            href="#"
-            className="font-semibold text-white bg-purple-600 px-10 py-[5px] rounded-xl"
+            className="text-white bg-purple-150 px-9 py-1.5 rounded-lg"
           >
             Login
           </a>
           <a
-            href="#"
-            className="font-semibold text-purple-600 bg-transparent px-10 py-[5px] rounded-xl border border-solid border-purple-600"
+            className="text-purple-150 bg-transparent px-9 py-1.5 rounded-lg border border-solid border-purple-150"
           >
             Sign in
           </a>
@@ -65,7 +63,7 @@ export const Header = () => {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-950 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-950 px-8 py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <img className="" src={Logo} />
             <button
@@ -80,45 +78,45 @@ export const Header = () => {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-sm/7 text-gray-400 hover:bg-purple-600">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-sm/7 text-gray-400 hover:bg-purple-150">
                     Home
                   </DisclosureButton>
                 </Disclosure>
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-sm/7 text-white hover:bg-purple-600"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-white hover:bg-purple-150"
                 >
                   Categoria
                 </a>
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-sm/7 text-white hover:bg-purple-600"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-white hover:bg-purple-150"
                 >
                   Preços
                 </a>
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-sm/7 text-white hover:bg-purple-600"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-white hover:bg-purple-150"
                 >
                   Contate-nos
                 </a>
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-sm/7 text-white hover:bg-purple-600"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-white hover:bg-purple-150"
                 >
                   FAQ
                 </a>
               </div>
-              <div className="py-6 flex gap-3">
+              <div className="items-center py-6 flex gap-3">
                 <a
                   href="#"
-                  className="font-semibold text-white bg-purple-600 px-10 py-[5px] rounded-xl"
+                  className="text-white bg-purple-150 px-9 py-[5px] rounded-xl"
                 >
                   Login
                 </a>
                 <a
                   href="#"
-                  className="font-semibold text-purple-600 bg-transparent px-10 py-[5px] rounded-xl border border-solid border-purple-600"
+                  className="text-purple-150 bg-transparent px-9 py-[5px] rounded-xl border border-solid border-purple-150"
                 >
                   Sign in
                 </a>
