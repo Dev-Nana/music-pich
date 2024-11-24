@@ -10,11 +10,11 @@ export const Banner = () => {
       />
       <div className="w-[36rem] lg:px-8">
         <div className="text-center flex flex-col flex-wrap items-center">
-          <p className="text-[7rem] flex flex-col flex-wrap items-center bg-gradient-to-b text-center from-gray-450 via-white to-gray-450 bg-clip-text text-transparent font-anton uppercase">
+          <p className="sm:text-[7rem] text-[4.5rem] flex flex-col flex-wrap items-center bg-gradient-to-b text-center from-gray-450 via-white to-gray-450 bg-clip-text text-transparent font-anton uppercase">
             Experiência
-            <p className="flex -mt-12">épica</p>
+            <p className="flex sm:-mt-12 -mt-[1.9rem]">épica</p>
           </p>
-          <p className="w-[29rem] text-[1.1rem] text-gray-400 font-poppins">
+          <p className="sm:w-[29rem] w-[25rem] sm:text-[1.1rem] text-[.9rem] text-gray-400 font-poppins">
             Temos a música perfeita com licença gratuita para sua criatividade.
             Descubra as possibilidades agora!
           </p>

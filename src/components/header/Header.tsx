@@ -110,13 +110,13 @@ export const Header = () => {
               <div className="items-center py-6 flex gap-3">
                 <a
                   href="#"
-                  className="text-white bg-purple-150 px-9 py-[5px] rounded-xl"
+                  className="text-white bg-purple-150 px-9 py-[5px] rounded-lg"
                 >
                   Login
                 </a>
                 <a
                   href="#"
-                  className="text-purple-150 bg-transparent px-9 py-[5px] rounded-xl border border-solid border-purple-150"
+                  className="text-purple-150 bg-transparent px-9 py-[5px] rounded-lg border border-solid border-purple-150"
                 >
                   Sign in
                 </a>
