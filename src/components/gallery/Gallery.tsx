@@ -1,5 +1,5 @@
 import { Filter } from "../filter/Filter";
-import { Section } from "../section/Section";
+import { Section } from "../section/section";
 
 export const Gallery = () => {
   return (
