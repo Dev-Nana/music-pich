@@ -1,4 +1,4 @@
-import { Header, Banner } from "../components";
+import { Header, Banner, Gallery } from "../components";
 import "./App.css"
 
 export default function App() {
@@ -6,6 +6,7 @@ export default function App() {
     <div className="relative">
       <Header />
       <Banner />
+      <Gallery />
     </div>
   )
 }
