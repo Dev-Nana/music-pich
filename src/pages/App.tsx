@@ -1,5 +1,4 @@
-import { Header } from "../components";
-import { Banner } from "../components/banner/Banner";
+import { Header, Banner } from "../components";
 import "./App.css"
 
 export default function App() {
