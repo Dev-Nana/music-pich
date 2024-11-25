@@ -16,7 +16,7 @@ export const Header = () => {
     <header>
       <nav className="mx-auto flex items-center justify-between py-4 px-8 md:px-12 bg-transparent">
         <div className="flex">
-          <img className="pr-[5vw]" src={Logo} />
+          <img className="pr-[5vw] cursor-pointer" src={Logo} />
         </div>
         <div className="flex lg:hidden">
           <button
@@ -28,30 +28,30 @@ export const Header = () => {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex gap-x-8">
-          <a href="#" className="text-white">
+          <a href="#" className="text-white text-shadow-lilac font-medium">
             Home
           </a>
-          <a href="#" className="text-white">
+          <a href="#" className="text-white hover:text-shadow-lilac font-light hover:font-medium">
             Categoria
           </a>
-          <a href="#" className="text-white">
+          <a href="#" className="text-white hover:text-shadow-lilac font-light hover:font-medium">
             Preços
           </a>
-          <a href="#" className="text-white">
+          <a href="#" className="text-white hover:text-shadow-lilac font-light hover:font-medium">
             Contate-nos
           </a>
-          <a href="#" className="text-white">
+          <a href="#" className="text-white hover:text-shadow-lilac font-light hover:font-medium">
             FAQ
           </a>
         </PopoverGroup>
         <div className="items-center hidden lg:flex lg:justify-end gap-3">
           <a
-            className="text-white bg-purple-150 px-9 py-1.5 rounded-lg"
+            className="text-white bg-purple-150 px-9 py-1.5 rounded-lg cursor-pointer"
           >
             Login
           </a>
           <a
-            className="text-purple-150 bg-transparent px-9 py-1.5 rounded-lg border border-solid border-purple-150"
+            className="text-purple-150 bg-transparent px-9 py-1.5 rounded-lg border border-solid border-purple-150 cursor-pointer"
           >
             Sign in
           </a>
@@ -65,7 +65,7 @@ export const Header = () => {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-950 px-8 py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <img className="" src={Logo} />
+            <img className="cursor-pointer" src={Logo} />
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
