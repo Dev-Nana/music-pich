@@ -2,7 +2,7 @@ import { LuSearch } from "react-icons/lu";
 
 export const Search = () => {
   return (
-    <form className="relative w-[40%] flex items-center">
+    <form className="relative md:w-[40%] w-11/12 flex items-center">
       <input
         type="search"
         id="default-search"
