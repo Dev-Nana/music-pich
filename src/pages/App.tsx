@@ -8,7 +8,6 @@ export default function App() {
       <Banner />
       <Section />
       <Gallery />
-      {/* Estrutura terminada */}
     </div>
   )
 }

@@ -7,16 +7,9 @@ import {
 import { IoChevronUp, IoChevronDownOutline } from "react-icons/io5";
 import { BsFilterLeft } from "react-icons/bs";
 
-// const sortOptions = [
-//   { name: "Popular", href: "#", current: true },
-//   { name: "Novo", href: "#", current: false },
-//   { name: "Relevante", href: "#", current: false },
-//   { name: "Nada", href: "#", current: false },
-// ];
-
 const filters = [
   {
-    id: "color",
+    id: "modo",
     name: "Modo",
     options: [
       { value: "frio", label: "Frio", checked: false },
@@ -28,45 +21,31 @@ const filters = [
     ],
   },
   {
-    id: "category",
+    id: "instrumental",
     name: "Instrumental",
     options: [
-      { value: "new-arrivals", label: "New Arrivals", checked: false },
-      { value: "sale", label: "Sale", checked: false },
-      { value: "travel", label: "Travel", checked: false },
-      { value: "organization", label: "Organization", checked: false },
-      { value: "accessories", label: "Accessories", checked: false },
+      { value: "calmo", label: "Lento", checked: false },
+      { value: "animado", label: "Animado", checked: false },
+      { value: "rápido", label: "Rápido", checked: false },
     ],
   },
   {
-    id: "size",
-    name: "Tema",
-    options: [
-      { value: "2l", label: "2L", checked: false },
-      { value: "6l", label: "6L", checked: false },
-      { value: "12l", label: "12L", checked: false },
-      { value: "18l", label: "18L", checked: false },
-      { value: "20l", label: "20L", checked: false },
-      { value: "40l", label: "40L", checked: false },
-    ],
-  },
-  {
-    id: "size",
+    id: "genero",
     name: "Gênero",
     options: [
-      { value: "2l", label: "2L", checked: false },
-      { value: "6l", label: "6L", checked: false },
-      { value: "12l", label: "12L", checked: false },
-      { value: "18l", label: "18L", checked: false },
-      { value: "20l", label: "20L", checked: false },
-      { value: "40l", label: "40L", checked: false },
+      { value: "Rock", label: "Rock", checked: false },
+      { value: "Samba", label: "Samba", checked: false },
+      { value: "Jaz", label: "Jaz", checked: false },
+      { value: "Gospel", label: "Gospel", checked: false },
+      { value: "Eletrônico", label: "Eletrônico", checked: false },
+      { value: "Reggae", label: "Reggae", checked: false },
     ],
   },
 ];
 
 export const Filter = () => {
   return (
-    <div className="invisible lg:visible w-[17rem]">
+    <div className="invisible lg:visible lg:w-[17rem] w-0">
       <main>
         <div className="flex items-baseline justify-between">
           <h1 className="text-[1rem] font-semibold flex-row items-center flex text-white gap-1">
@@ -76,17 +55,18 @@ export const Filter = () => {
 
         </div>
 
-        <section aria-labelledby="products-heading" className="py-6">
+        <section aria-labelledby="products-heading" className="py-8">
           <div className="grid gap-y-10">
             <form className="">
-              {filters.map((section) => (
+              {filters.map((section, index) => (
                 <Disclosure
                   key={section.id}
                   as="div"
-                  className="py-6"
+                  className="py-2"
+                  defaultOpen={index === 0}
                 >
-                  <h3 className="-my-3 flow-root">
-                    <DisclosureButton className="group flex w-full items-center justify-between py-5 text-sm text-gray-400 hover:text-gray-500">
+                  <h3 className="flow-root">
+                    <DisclosureButton className="group flex w-full items-center justify-between py-3 text-sm text-gray-400 hover:text-gray-500">
                       <span className="font-medium text-gray-300">
                         {section.name}
                       </span>
@@ -102,7 +82,7 @@ export const Filter = () => {
                       </span>
                     </DisclosureButton>
                   </h3>
-                  <DisclosurePanel className="pt-6 pl-[0.5rem]">
+                  <DisclosurePanel className="pt-4 pl-[0.5rem]">
                     <div className="space-y-4">
                       {section.options.map((option, optionIdx) => (
                         <div key={option.value} className="flex items-center">
@@ -127,8 +107,6 @@ export const Filter = () => {
                 </Disclosure>
               ))}
             </form>
-
-            {/* <div className="lg:col-span-3">Galeria</div> */}
           </div>
         </section>
       </main>
