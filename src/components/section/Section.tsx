@@ -2,8 +2,8 @@ import { FaCheck } from "react-icons/fa6";
 
 export const Section = () => {
   return (
-    <div className="z-10 absolute md:top-[119vh] top-[100vh] w-screen justify-center flex">
-      <div className="sm:w-11/12 w-10/12 sm:p-16 py-10 px-8 md:h-[18.5rem]  bg-gray-960/45 backdrop-blur-xl flex flex-col rounded-[2rem] items-center justify-between">
+    <div className="w-screen justify-center flex">
+      <div className="absolute md:top-[119vh] top-[100vh] sm:w-11/12 w-10/12 sm:p-16 py-10 px-8 md:h-[18.5rem] bg-gray-960/45 backdrop-blur-xl flex flex-col rounded-[2rem] items-center justify-between">
         <div className="text-center gap-3 md:gap-0 flex flex-col flex-wrap items-center md:h-[7rem] h-8rem justify-between">
           <p className="sm:w-[37rem] sm:text-[1.8rem] leading-tight text-white font-medium font-poppins">
             Downloads de música para todos os seus empreendimentos criativos
