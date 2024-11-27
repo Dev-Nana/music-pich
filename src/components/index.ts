@@ -3,6 +3,7 @@ export * from './banner/Banner';
 export * from './filter/Filter';
 export * from './section/Section';
 export * from './gallery/Gallery';
-export * from './albuns/Albuns';
+export * from './albums/Albums';
 export * from './search/Search';
 export * from './select/Select';
+export * from './songcards/SongCards';
