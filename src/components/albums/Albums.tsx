@@ -19,7 +19,7 @@ export const Albuns: React.FC = () => {
   useEffect(() => {
     const apresentacao = async () => {
       try {
-        const response = await axios.get(`/api/search?q=imaginedra&limit=15`);
+        const response = await axios.get(`/api/search?q=imaginedrag&limit=15`);
         const limitedSongs = response.data.data.slice(0, Limite);
         setSongs(limitedSongs);
       } catch (err) {
@@ -59,7 +59,7 @@ export const Albuns: React.FC = () => {
           {error}
         </p>}
       </div>
-      <div className="flex w-full h-[135vh] flex-row flex-wrap justify-between">
+      <div className="flex w-full gap-y-3 gap-x-2 flex-row flex-wrap justify-center">
       {songs.length > 0 ? (
             songs.map((song) => <SongCards key={song.id} song={song} />)
           ) : (
