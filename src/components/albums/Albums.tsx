@@ -54,13 +54,20 @@ export const Albuns: React.FC = () => {
         <Select />
       </div>
       <div className="py-5 relative flex items-center">
-        {error && (
-          <p className="flex absolute text-sm font-medium text-white">
-            {error}
-          </p>
-        )}
+        {error && 
+        <p className="flex absolute text-sm font-medium text-white">
+          {error}
+        </p>}
       </div>
-      <div className="flex flex-1"></div>
+      <div className="flex w-full h-[135vh] flex-row flex-wrap justify-between">
+      {songs.length > 0 ? (
+            songs.map((song) => <SongCards key={song.id} song={song} />)
+          ) : (
+            <p className="flex absolute text-sm font-medium text-white">
+              Nenhuma música encontrada para a busca atual.
+            </p>
+          )}
+      </div>
     </div>
   );
 };
