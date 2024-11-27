@@ -15,11 +15,11 @@ interface SongProps {
 
 export const SongCards: React.FC<SongProps> = ({ song }) => {
   return (
-    <div className="flex flex-col w-[19%] h-[32%] rounded-lg bg-radial-gray overflow-hidden">
+    <div className="flex flex-col sm:w-[13.5rem] w-[12rem] sm:h-[19rem] h-[18rem] rounded-lg bg-radial-gray overflow-hidden">
       <img src={song.album.cover} alt={song.title} className="h-[70%] object-cover object-center" />
-      <div className="p-3 flex flex-col h-[36%] justify-between">
+      <div className="px-3 flex flex-col h-[36%] justify-evenly">
 
-        <div className="flex flex-col justify-between h-[50%]">
+        <div className="flex flex-col justify-evenly h-[50%]">
           <h3 className="text-sm font-medium text-white">{song.title}</h3>
           <p className="text-sm text-gray-400">{song.artist.name}</p>
         </div>
