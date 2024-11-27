@@ -19,50 +19,31 @@ export const Albums: React.FC = () => {
   useEffect(() => {
     const apresentacao = async () => {
       try {
-        const response = await axios.get(`/api/deezer`, {
-          params: { q: "imaginedrag", limit: 15 },
-        });
-        console.log(response); // Verifique a resposta da API
-
-        if (response.data && response.data.data) {
-          const limitedSongs = response.data.data.slice(0, Limite);
-          setSongs(limitedSongs);
-        } else {
-          setError("Dados não encontrados.");
-        }
+        const response = await axios.get(`/api/search?q=imaginedrag&limit=15`);
+        const limitedSongs = response.data.data.slice(0, Limite);
+        setSongs(limitedSongs);
       } catch (err) {
         setError("Erro ao carregar músicas");
         console.error(err);
       }
     };
-
     apresentacao();
   }, []);
 
   const buscar = async () => {
     try {
       setError(null);
-      console.log("Buscando por:", query); // Verifique o valor de query
-      const response = await axios.get(`/api/deezer`, {
-        params: { q: query, limit: 15 },
-      });
-      console.log("Resposta do backend:", response.data);
-
-      if (response.data && response.data.data) {
-        const limitedSongs = response.data.data.slice(0, Limite);
-        setSongs(limitedSongs);
-      } else {
-        setError("Dados não encontrados.");
-      }
+      const response = await axios.get(`/api/search?q=${query}`);
+      const limitedSongs = response.data.data.slice(0, Limite);
+      setSongs(limitedSongs);
     } catch (err) {
       setError("Erro ao buscar músicas");
-      console.error("Erro na requisição:", err);
+      console.error(err);
     }
   };
 
   const controle = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Buscando músicas...");
     buscar();
   };
 
@@ -73,20 +54,19 @@ export const Albums: React.FC = () => {
         <Select />
       </div>
       <div className="py-5 relative flex items-center">
-        {error && (
-          <p className="flex absolute text-sm font-medium text-white">
-            {error}
-          </p>
-        )}
+        {error && 
+        <p className="flex absolute text-sm font-medium text-white">
+          {error}
+        </p>}
       </div>
       <div className="flex w-full gap-y-3 gap-x-2 flex-row flex-wrap justify-center">
-        {songs.length > 0 ? (
-          songs.map((song) => <SongCards key={song.id} song={song} />)
-        ) : (
-          <p className="flex absolute text-sm font-medium text-white">
-            Nenhuma música encontrada para a busca atual.
-          </p>
-        )}
+      {songs.length > 0 ? (
+            songs.map((song) => <SongCards key={song.id} song={song} />)
+          ) : (
+            <p className="flex absolute text-sm font-medium text-white">
+              Nenhuma música encontrada para a busca atual.
+            </p>
+          )}
       </div>
     </div>
   );
