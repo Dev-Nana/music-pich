@@ -23,6 +23,10 @@ export default {
       textShadow: {
         lilac: 'rgba(255, 0, 255, 1) 1px 1px 20px',
       },
+      backgroundImage: {
+        'radial-gray': 'radial-gradient(circle, #343A43, #343A43, #252B36, #1D2331)',
+        // dentro, meio, fora
+      },
     },
   },
   plugins: [
