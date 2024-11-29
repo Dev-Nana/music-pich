@@ -7,23 +7,21 @@ import { BsPlayCircle } from "react-icons/bs";
 interface SongProps {
   song: {
     id: string;
-    title: string;
-    artist: { name: string };
-    album: { cover: string };
+    name: string; // Alterado de title para name
+    artists: { name: string }[]; // Alterado para um array de artistas
+    album: { images: { url: string }[] }; // Alterado para um array de imagens
   };
 }
 
 export const SongCards: React.FC<SongProps> = ({ song }) => {
   return (
     <div className="flex flex-col sm:w-[13.5rem] w-[12rem] sm:h-[19rem] h-[18rem] rounded-lg bg-radial-gray overflow-hidden">
-      <img src={song.album.cover} alt={song.title} className="h-[70%] object-cover object-center" />
+      <img src={song.album.images[0]?.url} alt={song.name} className="h-[70%] object-cover object-center" />
       <div className="px-3 flex flex-col h-[36%] justify-evenly">
-
         <div className="flex flex-col justify-evenly h-[50%]">
-          <h3 className="text-sm font-medium text-white">{song.title}</h3>
-          <p className="text-sm text-gray-400">{song.artist.name}</p>
+          <h3 className="text-sm font-medium text-white">{song.name}</h3>
+          <p className="text-sm text-gray-400 line-clamp-2">{song.artists.map(artist => artist.name).join(", ")}</p>
         </div>
-
         <div className="flex flex-row border-t pt-2 border-gray-700 justify-between w-full">
           <div className="flex justify-between flex-row w-[36%] items-center">
             <TbDownload className="text-[1.1rem] text-gray-400 cursor-pointer" />
@@ -32,7 +30,6 @@ export const SongCards: React.FC<SongProps> = ({ song }) => {
           </div>
           <BsPlayCircle className="text-[1.6rem] text-purple-150 cursor-pointer" />
         </div>
-
       </div>
     </div>
   );

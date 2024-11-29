@@ -1,50 +1,35 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Search, Select, SongCards } from "../../components";
-
-interface Song {
-  id: string;
-  title: string;
-  artist: { name: string };
-  album: { cover: string };
-}
+import { getAccessToken, searchTracks } from "../../utils/spotify";
 
 export const Albums: React.FC = () => {
   const [query, setQuery] = useState<string>("");
-  const [songs, setSongs] = useState<Song[]>([]);
+  const [songs, setSongs] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const Limite = 15;
-
-  useEffect(() => {
-    const apresentacao = async () => {
-      try {
-        const response = await axios.get(`/api/search?q=imaginedrag&limit=15`);
-        const limitedSongs = response.data.data.slice(0, Limite);
-        setSongs(limitedSongs);
-      } catch (err) {
-        setError("Erro ao carregar músicas");
-        console.error(err);
-      }
-    };
-    apresentacao();
-  }, []);
-
-  const buscar = async () => {
+  const buscar = async (searchQuery: string) => {
     try {
-      setError(null);
-      const response = await axios.get(`/api/search?q=${query}`);
-      const limitedSongs = response.data.data.slice(0, Limite);
-      setSongs(limitedSongs);
+      setLoading(true);
+      const token = await getAccessToken();
+      const tracks = await searchTracks(searchQuery, token);
+      setSongs(tracks);
+      setError(null); // Limpar erros anteriores
     } catch (err) {
       setError("Erro ao buscar músicas");
       console.error(err);
+    } finally {
+      setLoading(false);
     }
   };
 
+  useEffect(() => {
+    buscar("imaginedr");
+  }, []);
+
   const controle = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    buscar();
+    buscar(query);
   };
 
   return (
@@ -54,19 +39,37 @@ export const Albums: React.FC = () => {
         <Select />
       </div>
       <div className="py-5 relative flex items-center">
-        {error && 
-        <p className="flex absolute text-sm font-medium text-white">
-          {error}
-        </p>}
+        {loading && (
+          <p className="flex absolute text-sm font-medium text-white">
+            Carregando músicas...
+          </p>
+        )}
+        {error && (
+          <p className="flex absolute text-sm font-medium text-white">{error}</p>
+        )}
       </div>
       <div className="flex w-full gap-y-3 gap-x-2 flex-row flex-wrap justify-center">
-      {songs.length > 0 ? (
-            songs.map((song) => <SongCards key={song.id} song={song} />)
-          ) : (
+        {songs.length > 0 ? (
+          songs.map((song) => (
+            <SongCards
+              key={song.id}
+              song={{
+                id: song.id,
+                name: song.name,
+                artists: song.artists.map((artist: any) => ({
+                  name: artist.name,
+                })),
+                album: { images: song.album.images },
+              }}
+            />
+          ))
+        ) : (
+          !loading && (
             <p className="flex absolute text-sm font-medium text-white">
               Nenhuma música encontrada para a busca atual.
             </p>
-          )}
+          )
+        )}
       </div>
     </div>
   );
