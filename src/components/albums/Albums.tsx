@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Search, Select, SongCards } from "../../components";
+import { Search, Select, SongCards, Button } from "../../components";
 import { getAccessToken, searchTracks } from "../../utils/spotify";
 
 export const Albums: React.FC = () => {
@@ -70,6 +70,7 @@ export const Albums: React.FC = () => {
             </p>
           )
         )}
+        <Button />
       </div>
     </div>
   );
