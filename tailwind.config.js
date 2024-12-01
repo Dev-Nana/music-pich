@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': {'max': '480px' }, 
+      },
       colors: {
         'purple': {
           150: '#9215CB'
