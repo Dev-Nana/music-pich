@@ -24,10 +24,20 @@ export const getAccessToken = async (): Promise<string> => {
   return response.data.access_token;
 };
 
-export const searchTracks = async (query: string, token: string) => {
-  const response = await axios.get(`https://api.spotify.com/v1/search`, {
+export const searchTracks = async (
+  query: string,
+  token: string,
+  offset: number = 0,
+  limit: number = 15
+) => {
+  const response = await axios.get("https://api.spotify.com/v1/search", {
     headers: { Authorization: `Bearer ${token}` },
-    params: { q: query, type: "track", limit: 15 },
+    params: {
+      q: query,
+      type: "track",
+      limit,
+      offset,
+    },
   });
 
   return response.data.tracks.items;
