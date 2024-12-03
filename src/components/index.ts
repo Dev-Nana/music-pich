@@ -8,3 +8,4 @@ export * from './search/Search';
 export * from './select/Select';
 export * from './songcards/SongCards';
 export * from './button/Button';
+export * from './footer/Footer';

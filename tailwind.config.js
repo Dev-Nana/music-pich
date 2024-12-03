@@ -7,17 +7,18 @@ export default {
   theme: {
     extend: {
       screens: {
-        'xs': {'max': '480px' }, 
+        'xs': { 'max': '480px' },
       },
       colors: {
         'purple': {
-          150: '#9215CB'
+          150: '#9215CB',
+          1000: '#3B0E2C',
         },
         'gray': {
           450: '#757575',
           950: '#121724',
           960: '#404657',
-        },
+        }
       },
       fontFamily: {
         anton: ['Anton', 'sans-serif'],
