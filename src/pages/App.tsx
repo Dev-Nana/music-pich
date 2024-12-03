@@ -1,4 +1,4 @@
-import { Header, Banner, Gallery, Section } from "../components";
+import { Header, Banner, Gallery, Section, Footer } from "../components";
 import "./App.css"
 
 export default function App() {
@@ -8,6 +8,7 @@ export default function App() {
       <Banner />
       <Section />
       <Gallery />
+      <Footer />
     </div>
   )
 }
