@@ -15,7 +15,7 @@ export const Footer = () => {
             libere sua criatividade. Junte-se a nós hoje!
           </p>
         </div>
-        <div className="flex gap-y-5 md:gap-y-1 md:flex-row md:text-left text-center flex-col items-center md:justify-between md:w-[55%] lg:w-[50%] sm:">
+        <div className="flex gap-y-5 md:gap-y-1 md:flex-row md:text-left text-center flex-col items-center md:items-start md:justify-between md:w-[55%] lg:w-[50%]">
           <div className="flex flex-col gap-y-3">
             <p className="text-gray-500 text-sm py-2">Produtos</p>
             <p className="text-gray-300">Vocal</p>
