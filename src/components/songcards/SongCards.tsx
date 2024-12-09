@@ -7,9 +7,9 @@ import { BsPlayCircle } from "react-icons/bs";
 interface SongProps {
   song: {
     id: string;
-    name: string; // Alterado de title para name
-    artists: { name: string }[]; // Alterado para um array de artistas
-    album: { images: { url: string }[] }; // Alterado para um array de imagens
+    name: string;
+    artists: { name: string }[];
+    album: { images: { url: string }[] };
   };
 }
 
