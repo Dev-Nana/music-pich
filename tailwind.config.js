@@ -29,7 +29,6 @@ export default {
       },
       backgroundImage: {
         'radial-gray': 'radial-gradient(circle, #343A43, #343A43, #252B36, #1D2331)',
-        // dentro, meio, fora
       },
     },
   },
